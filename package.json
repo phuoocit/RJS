@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/phuoocit/RJS/issues"
   },
-  "homepage": "https://github.com/phuoocit/RJS#readme"
+  "homepage": "https://github.com/phuoocit/RJS#readme",
+  "dependencies": {
+    "boostrap": "^2.0.0",
+    "react-popper": "^2.2.5",
+    "reactstrap": "^9.0.1"
+  }
 }
