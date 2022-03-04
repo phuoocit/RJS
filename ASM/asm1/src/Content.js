@@ -18,7 +18,6 @@ function Content() {
             
             <div className="mb-4">
                 <button type="button" className="btn btn-secondary mx-4 btn-lg" name='col-6' onClick={e => handleLayOut(e)}>2 Cột</button>
-                <button type="button" className="btn btn-secondary mx-4 btn-lg" name='col-4' onClick={e => handleLayOut(e)}>3 Cột</button>
                 <button type="button" className="btn btn-secondary mx-4 btn-lg" name='col-3' onClick={e => handleLayOut(e)}>4 cột</button>
                 <button type="button" className="btn btn-secondary mx-4 btn-lg" name='col-2' onClick={e => handleLayOut(e)}>6 cột</button>
             </div>
