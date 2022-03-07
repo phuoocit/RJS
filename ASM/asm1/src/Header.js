@@ -4,7 +4,7 @@ function Header() {
     
     return (
         <header>
-            <h1>Ứng dụng quản lý nhân sự 1.0</h1>
+            <h1>Ứng dụng quản lý nhân sự 1.00</h1>
         </header>
     )
 }
