@@ -5,8 +5,8 @@ const StaffContext = createContext()
 
 function StaffProvider ({children}) {
     const [userId, setUserId] = useState('')
-    const handleCilck = (id) => {
-        setUserId(id)
+    const handleCilck = (staff) => {
+        setUserId(staff.id)
     };
     
     const value = {
@@ -16,7 +16,7 @@ function StaffProvider ({children}) {
     return (
         <StaffContext.Provider value={value}>
             {children}
-        </StaffContext.Provider >
+        </StaffContext.Provider>
     )
 }
 export { StaffProvider, StaffContext }

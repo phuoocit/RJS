@@ -1,4 +1,4 @@
-import { STAFFS, DEPARTMENTS } from './staffs.jsx';
+import { STAFFS } from './staffs.jsx';
 import dateFormat from 'dateformat';
 import { useContext } from 'react';
 import img from './img.jpg';
@@ -11,6 +11,7 @@ function Staff() {
     const user = STAFFS.find(staff => {
         return staff.id == context.userId
     })
+    
     return (
         <div className='container'>
             <h5>Nhân viên/ {user.name}</h5>

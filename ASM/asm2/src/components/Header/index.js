@@ -1,4 +1,4 @@
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route, Link, Switch } from 'react-router-dom';
 import Homepage from '../pages/Home';
 import Departmentpage from '../pages/Department';
 import StaffPage from '../pages/Staff';
@@ -6,7 +6,6 @@ import SalarySheetpage from '../pages/SalarySheet';
 import Searchpage from './Search';
 import { handleSearch } from './Search';
 function Header() {
-    
     return (
         <>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -26,20 +25,22 @@ function Header() {
                         </ul>
                     </div>
                     <form className="d-flex">
-                        <input 
-                        className="form-control me-2" 
-                        type="search" placeholder="Search" 
-                        aria-label="Search" onChange={e => e.target.value} />
-                            <button className="btn btn-outline-success" type="submit">Search</button>
+                        <input
+                            className="form-control me-2"
+                            type="search" placeholder="Search"
+                            aria-label="Search" onChange={e => e.target.value} />
+                        <button className="btn btn-outline-success" type="submit">Search</button>
                     </form>
                 </div>
             </nav>
 
             <Routes>
                 <Route path='/' element={<Homepage></Homepage>}></Route>
-                <Route path='/Staff' element={<StaffPage ></StaffPage>}></Route>
                 <Route path='/Department' element={<Departmentpage></Departmentpage>}></Route>
                 <Route path='/SalarySheet' element={<SalarySheetpage></SalarySheetpage>}></Route>
+                <Route path='/:id' element={<StaffPage ></StaffPage>}>
+                    
+                </Route>
             </Routes>
         </>
     )

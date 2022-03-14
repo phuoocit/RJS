@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import ReactDOM from 'react-dom';
+import { SearchProvider } from './components/pages/SearchContext';
 import { StaffProvider } from './components/pages/StaffContext';
-
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
