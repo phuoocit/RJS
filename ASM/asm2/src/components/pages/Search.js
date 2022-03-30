@@ -19,7 +19,7 @@ function Searchpage() {
                     >
                         <div className="border rounded p-2">
                             <img src={img} alt={staff.name} className='img-fluid' />
-                            <h3>{staff.id}</h3>
+                            <h3>{staff.name}</h3>
                         </div>
                     </Link>
                 ))}
