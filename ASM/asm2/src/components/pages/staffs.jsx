@@ -23,7 +23,7 @@ export const DEPARTMENTS =
         {
             id: "Dept05",
             name: "Finance",
-            numberOfStaff: 11
+            numberOfStaff: 9
         }
     ]
 export const ROLE = {
@@ -115,7 +115,7 @@ export const STAFFS =
             doB: "2003-01-01T08:59:00.000Z",
             salaryScale: 1,
             startDate: "2019-04-30T08:59:00.000Z",
-            department: DEPARTMENTS[2],
+            department: DEPARTMENTS[1],
             annualLeave: 9,
             overTime: 10,
             image: '/assets/images/alberto.png',
@@ -126,7 +126,7 @@ export const STAFFS =
             doB: "2003-01-01T08:59:00.000Z",
             salaryScale: 1,
             startDate: "2019-04-30T08:59:00.000Z",
-            department: DEPARTMENTS[3],
+            department: DEPARTMENTS[1],
             annualLeave: 9,
             overTime: 10,
             image: '/assets/images/alberto.png',
