@@ -1,18 +1,19 @@
 import { Link } from 'react-router-dom';
-import {  useState } from 'react';
-import { STAFFS } from '../pages/staffs.jsx';
+import {  useContext } from 'react';
+import { STAFFS } from './staffs.jsx';
 import img from '../pages/img.jpg';
-import Staff from '../pages/Staff.js';
-
+import { SearchContext } from './SearchContext'
 
 function Searchpage() {
-    const [search, setSearcher] = useState('')
-    
+    const searchContext = useContext(SearchContext)
+    const searchList = STAFFS.filter(staff => {
+        return staff.name.toLowerCase().includes(searchContext.searchInput)
+    })
     return (
         <div className="container overflow-hidden">
-            <h3 className='border-bottom p-2'>123</h3>
+            <h3 className='border-bottom p-2'>{`Tìm kiếm/${searchContext.searchInput}`}</h3>
             <ul className="row g-2">
-                {STAFFS.map(staff => (
+                {searchList.map(staff => (
                     <Link to='/Staff' key={staff.id} id={staff.id}
                         className='col-lg-2 col-md-4 col-sm-3'
                     >

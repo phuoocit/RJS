@@ -1,6 +1,6 @@
-import { STAFFS } from './staffs.jsx';
-import dateFormat from 'dateformat';
 import { useContext } from 'react';
+import dateFormat from 'dateformat';
+import { STAFFS } from './staffs.jsx';
 import img from './img.jpg';
 import { StaffContext } from './StaffContext';
 
@@ -9,7 +9,7 @@ import { StaffContext } from './StaffContext';
 function Staff() {
     const context = useContext(StaffContext)
     const user = STAFFS.find(staff => {
-        return staff.id == context.userId
+        return staff.id === context.userId
     })
     
     return (

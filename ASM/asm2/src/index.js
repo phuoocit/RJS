@@ -11,9 +11,11 @@ import 'bootstrap/dist/css/bootstrap.css';
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <StaffProvider>
-        <App />
-      </StaffProvider>
+      <SearchProvider>
+        <StaffProvider>
+          <App />
+        </StaffProvider>
+      </SearchProvider>
     </Router>
   </React.StrictMode>,
   document.getElementById('root')

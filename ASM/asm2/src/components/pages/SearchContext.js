@@ -8,7 +8,7 @@ function SearchProvider ({children}) {
     const handleSearch = (input) => {
         setsearchInput(input)
     };
-    
+   
     const value = {
         searchInput,
         handleSearch,

@@ -1,17 +1,31 @@
-import { DEPARTMENTS } from './staffs.jsx';
+import { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { StaffContext } from './StaffContext';
+import { useParams } from 'react-router-dom';
+import { STAFFS } from './staffs.jsx';
+import img from './img.jpg';
+
 
 function Department() {
+    const context = useContext(StaffContext)
+    let { id } = useParams();
+    const users = STAFFS.filter( staff => {
+        return staff.department.name === id;
+    })
     return (
-        <div className="container">
-            <ul className='row g-4'>
-                {DEPARTMENTS.map(department => (
-                    <li key={department.id}
-                        className='col-lg-4 col-md-6 col-sm-12'
-                    >
-                        <div className='border rounded p-2'>
-                            <h3>{department.name}</h3>
-                            <p className='p-2'>Số lượng nhân viên: {department.numberOfStaff}</p>
-                        </div>
+        <div className="container overflow-hidden">
+            <h3 className='border-bottom p-2'>{`${id}/ Nhân viên`}</h3>
+            <ul className="row g-2">
+                {users.map(staff => (
+                    <li className='col-lg-2 col-md-4 col-sm-3' key={staff.id}>
+                        <Link to={`/Staff/${staff.id}`}
+                            onClick={e => context.handleCilck(staff)}
+                        >
+                            <div className="border rounded p-2">
+                                <img src={img} alt={staff.name} className='img-fluid' />
+                                <h3>{staff.name}</h3>
+                            </div>
+                        </Link>
                     </li>
                 ))}
             </ul>
