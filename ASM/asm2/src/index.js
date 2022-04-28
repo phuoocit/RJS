@@ -1,6 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import ReactDOM from 'react-dom';
+import { SearchProvider } from './components/pages/SearchContext';
+import { StaffProvider } from './components/pages/StaffContext';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -9,7 +11,11 @@ import 'bootstrap/dist/css/bootstrap.css';
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <App />
+      <SearchProvider>
+        <StaffProvider>
+          <App />
+        </StaffProvider>
+      </SearchProvider>
     </Router>
   </React.StrictMode>,
   document.getElementById('root')
