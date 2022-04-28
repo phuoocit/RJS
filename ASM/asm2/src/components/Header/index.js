@@ -7,6 +7,7 @@ import StaffPage from '../pages/Staff';
 import SearchPage from '../pages/Search';
 import SalarySheetpage from '../pages/SalarySheet';
 import { SearchContext } from '../pages/SearchContext';
+import Formpage from '../pages/FormComponent';
 import imgLogo from '../pages/logo.png';
 function Header() {
     const searchContext = useContext(SearchContext)
@@ -56,6 +57,7 @@ function Header() {
             <Routes>
                 <Route path='/' element={<Homepage></Homepage>}></Route>
                 <Route path='/Departments' element={<Departmentpages></Departmentpages>}></Route>
+                <Route path='/Formpage' element={<Formpage></Formpage>}></Route>
                 <Route path='/Departments/:id' element={<Departmentpage></Departmentpage>}></Route>
                 <Route path='/SalarySheet' element={<SalarySheetpage></SalarySheetpage>}></Route>
                 <Route path='/Staff/:id' element={<StaffPage ></StaffPage>}></Route>
