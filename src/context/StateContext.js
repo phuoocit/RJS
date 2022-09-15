@@ -1,37 +1,46 @@
-import React, { createContext, useContext, useReducer, useEffect } from 'react';
+import React, { createContext, useContext, useReducer, useEffect } from "react";
 
 import reducer, { initialState } from "./reducer";
 import * as ActionTypes from "./actions";
-import logger from '../pages/logger';
+import logger from "../pages/logger";
 
 export const StateContext = createContext();
 
 export const StateProvider = ({ children }) => {
   const [state, dispatch] = useReducer(logger(reducer), initialState);
   useEffect(() => {
-    fetchStaff('staffs')
-  }, [])
+    fetchStaff("dishes");
+    fetchStaff("comments");
+    fetchStaff("promotions");
+    fetchStaff("leaders");
+  }, []);
   const fetchStaff = (type) => {
-    fetch(`https://rjs101xbackend.herokuapp.com/${type}`)
+    fetch(`http://localhost:3001/${type}`)
       .then((res) => res.json())
-      .then((staffs) => {
+      .then((data) => {
         switch (type) {
-          case 'staffs':
+          case "dishes":
             dispatch({
-              type: ActionTypes.LOADING_STAFF,
-              payload: staffs
+              type: ActionTypes.LOADING_DISHES,
+              payload: data,
             });
             break;
-          case 'departments':
+          case "comments":
             dispatch({
-              type: ActionTypes.LOADING_DEPARTMENT,
-              payload: staffs
+              type: ActionTypes.LOADING_COMMENTS,
+              payload: data,
             });
             break;
-          case 'staffsSalary':
+          case "leaders":
             dispatch({
-              type: ActionTypes.LOADING_SALARYSHEET,
-              payload: staffs
+              type: ActionTypes.LOADING_LEADERS,
+              payload: data,
+            });
+            break;
+          case "promotions":
+            dispatch({
+              type: ActionTypes.LOADING_PROMOTIONS,
+              payload: data,
             });
             break;
         }
@@ -43,12 +52,12 @@ export const StateProvider = ({ children }) => {
         ...state,
         fetchStaff,
         dispatch,
-        state
+        state,
       }}
     >
       {children}
     </StateContext.Provider>
-  )
+  );
 };
 
 export const useStateValue = () => useContext(StateContext);

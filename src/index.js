@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import { SearchProvider } from './pages/SearchContext';
-import { StaffProvider } from './pages/StaffContext';
+import { DishProvider } from './pages/DishContext';
 import { StateProvider } from './context/StateContext';
 import './index.css';
 import App from './App';
@@ -14,9 +14,9 @@ ReactDOM.render(
   <Router>
     <StateProvider>
       <SearchProvider>
-        <StaffProvider>
+        <DishProvider>
           <App />
-        </StaffProvider>
+        </DishProvider>
       </SearchProvider>
     </StateProvider>
   </Router>
